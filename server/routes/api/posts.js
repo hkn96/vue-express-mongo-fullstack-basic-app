@@ -14,12 +14,12 @@ async function loadPostsCollection() {
   return client.db('vue_express').collection('posts');
 }
 
-//!Get Posts
+//Get Posts
 router.get('/', async (req, res) => {
   const posts = await loadPostsCollection();
   res.send(await posts.find({}).toArray());
 });
-//! Add Posts
+// Add Posts
 
 router.post('/', async (req, res) => {
   const posts = await loadPostsCollection();
@@ -30,11 +30,11 @@ router.post('/', async (req, res) => {
   res.status(201).send();
 });
 
-//!Delete Post
+//Delete Post
 
 router.delete('/:id', async (req, res) => {
   const posts = await loadPostsCollection();
-  await posts.deleteOne({ _id: new mongodb.ObjectID(req.params.id) });
+  await posts.deleteOne({ _id: new mongodb.ObjectId(req.params.id) });
   res.status(200).send();
 });
 
