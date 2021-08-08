@@ -7,7 +7,7 @@ const router = express.Router();
 
 async function loadPostsCollection() {
   const client = await mongodb.MongoClient.connect(
-    'mongodb+srv://HKN:Karaman70.@cluster1.rzzo2.mongodb.net/test',
+    'mongodb+srv://HKN:Hallo1234..@cluster1.rzzo2.mongodb.net/test',
     { useNewUrlParser: true }
   );
 
